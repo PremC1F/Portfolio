@@ -8,6 +8,7 @@ import { EducationSection } from "@/components/sections/education";
 import { ResumeSection } from "@/components/sections/resume";
 import { ContactSection } from "@/components/sections/contact";
 import { Footer } from "@/components/footer";
+import { ModeToggle } from "@/components/mode-toggle";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <ContactSection />
       </main>
       <Footer />
+      <ModeToggle />
     </div>
   );
 }
