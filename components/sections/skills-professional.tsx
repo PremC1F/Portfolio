@@ -80,27 +80,34 @@ export function SkillsProfessional() {
           <h2 className="text-6xl sm:text-7xl font-bold mb-6 text-center text-gray-900 dark:text-white">
             How I Build AI Systems
           </h2>
-          <p className="text-center text-gray-600 dark:text-gray-400 mb-20 max-w-2xl mx-auto text-xl leading-relaxed">
+          <p className="text-center text-gray-600 dark:text-gray-300 mb-20 max-w-2xl mx-auto text-xl leading-relaxed">
             A practical breakdown of the layers behind my work.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
+        <div className="grid md:grid-cols-2 gap-8">
           {skillLayers.map((layer, index) => (
             <motion.div
               key={layer.title}
               {...fadeIn}
-              className="p-10 bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 space-y-5"
+              className="p-8 lg:p-10 bg-white dark:bg-gray-900/50 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm space-y-6"
             >
-              <h3 className="text-3xl font-semibold text-gray-900 dark:text-white">
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
                 {layer.title}
               </h3>
-              <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+              <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed">
                 {layer.description}
               </p>
-              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed pt-2">
-                {layer.skills.join(", ")}
-              </p>
+              <div className="flex flex-wrap gap-2 pt-2">
+                {layer.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm rounded-lg border border-gray-200 dark:border-gray-700"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>

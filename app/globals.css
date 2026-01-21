@@ -45,10 +45,10 @@
 }
 
 :root {
-  --radius: 0.5rem;
+  --radius: 1rem;
   /* Super Mario Light Theme - Mushroom Kingdom */
-  --background: oklch(0.97 0.02 100); /* Clean sky blue-white */
-  --foreground: oklch(0.20 0.05 50);
+  --background: oklch(0.98 0.01 100); /* Soft off-white */
+  --foreground: oklch(0.15 0.02 50);
   --card: oklch(1 0.01 100 / 0.95);
   --card-foreground: oklch(0.20 0.05 50);
   --popover: oklch(1 0.01 100);
@@ -82,8 +82,8 @@
 
 .dark {
   /* Super Mario Dark Theme - Underground/Castle */
-  --background: oklch(0.15 0.02 280); /* Dark underground blue-black */
-  --foreground: oklch(0.95 0.02 100);
+  --background: oklch(0.12 0.01 280); /* Deep charcoal */
+  --foreground: oklch(0.96 0.01 100);
   --card: oklch(0.20 0.03 280 / 0.95);
   --card-foreground: oklch(0.95 0.02 100);
   --popover: oklch(0.20 0.03 280);
@@ -128,8 +128,27 @@
     @apply bg-background text-foreground;
     position: relative;
     overflow-x: hidden;
-    font-size: 10px;
-    line-height: 1.8;
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  }
+
+  /* Custom scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--background);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--muted-foreground);
   }
 
   /* Clean Mario Background - Subtle clouds */

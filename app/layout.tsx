@@ -10,6 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://premxai.com"),
   title: "Prem Babu Kanaparthi | AI/ML Engineer",
   description:
     "AI/ML Engineer specializing in LLMs, RAG Systems, and MLOps. Currently pursuing MS in Artificial Intelligence at RIT.",
@@ -31,6 +32,26 @@ export const metadata: Metadata = {
     description:
       "AI/ML Engineer specializing in LLMs, RAG Systems, and MLOps",
     type: "website",
+    url: "https://premxai.com",
+    siteName: "Prem Babu Kanaparthi Portfolio",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Prem Babu Kanaparthi - AI/ML Engineer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Prem Babu Kanaparthi | AI/ML Engineer",
+    description:
+      "AI/ML Engineer specializing in LLMs, RAG Systems, and MLOps",
+    images: ["/og.png"],
+  },
+  alternates: {
+    canonical: "https://premxai.com",
   },
 };
 

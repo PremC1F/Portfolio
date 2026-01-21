@@ -23,12 +23,12 @@ export function HeroProfessional({ scrollToSection }: HeroProfessionalProps) {
           >
 
             <div className="space-y-3">
-              <div className="inline-block px-4 py-2 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-md">
-                <p className="text-sm font-medium text-green-700 dark:text-green-400 tracking-wide">
+              <div className="inline-block px-4 py-2 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
+                <p className="text-base font-medium text-green-700 dark:text-green-300 tracking-wide">
                   🟢 Available for Opportunities
                 </p>
               </div>
-              <p className="text-sm text-gray-500 dark:text-gray-500 tracking-wide uppercase">
+              <p className="text-base text-gray-600 dark:text-gray-400 tracking-wide uppercase font-medium">
                 AI / ML Engineer
               </p>
             </div>
@@ -38,74 +38,74 @@ export function HeroProfessional({ scrollToSection }: HeroProfessionalProps) {
             </h1>
 
 
-            <div className="max-w-lg space-y-4">
-              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            <div className="max-w-lg space-y-5">
+              <p className="text-xl text-gray-700 dark:text-gray-200 leading-relaxed">
                 I build production-ready AI systems, working across large language models,
                 retrieval-augmented generation, and MLOps.
               </p>
-              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              <p className="text-xl text-gray-700 dark:text-gray-200 leading-relaxed">
                 My focus is on scalable, reliable machine learning systems that perform in
                 real-world environments. I'm currently pursuing a Master's in Artificial
                 Intelligence at Rochester Institute of Technology.
               </p>
             </div>
 
-            <div className="flex gap-4 pt-4">
+            <div className="flex gap-4 pt-6">
               <button
                 onClick={() => scrollToSection("projects")}
-                className="px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-black text-sm font-medium hover:bg-gray-700 dark:hover:bg-gray-200 transition-colors duration-200"
+                className="px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-black text-base font-medium hover:bg-gray-700 dark:hover:bg-gray-200 transition-colors duration-200 rounded-lg"
               >
                 View Selected Work
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
-                className="px-6 py-3 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors duration-200"
+                className="px-8 py-4 border-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white text-base font-medium hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors duration-200 rounded-lg"
               >
                 Contact
               </button>
             </div>
 
-            <div className="flex gap-4 pt-2">
+            <div className="flex gap-5 pt-4">
               <a
                 href="https://github.com/PremC1F"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
+                className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
               >
-                <Github className="w-5 h-5" />
+                <Github className="w-6 h-6" />
               </a>
               <a
                 href="https://www.linkedin.com/in/prembk03/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
+                className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
               >
-                <Linkedin className="w-5 h-5" />
+                <Linkedin className="w-6 h-6" />
               </a>
               <a
                 href="https://x.com/Premxai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
+                className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
               >
-                <Twitter className="w-5 h-5" />
+                <Twitter className="w-6 h-6" />
               </a>
               <a
                 href="https://medium.com/@prem.b.kanaparthi"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
+                className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
               >
-                <BookOpen className="w-5 h-5" />
+                <BookOpen className="w-6 h-6" />
               </a>
               <a
                 href="https://scholar.google.com/citations?user=yIWQSykAAAAJ&hl=en"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
+                className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
                 title="Google Scholar"
               >
-                <GraduationCap className="w-5 h-5" />
+                <GraduationCap className="w-6 h-6" />
               </a>
             </div>
           </motion.div>
