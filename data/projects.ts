@@ -88,36 +88,4 @@ export const projects: Project[] = [
     github: "https://github.com/PremC1F/Multi-Language-Sentiment-Analysis-System-",
     image: "/projects/sentiment-analyzer.png",
   },
-  {
-    id: "llm-optimization",
-    title: "LLM Inference Optimization Framework",
-    description:
-      "Optimized LLM inference with 3x throughput improvement and 60% cost reduction",
-    details: [
-      "Implemented quantization and pruning techniques for model compression",
-      "Achieved 3x throughput improvement with vLLM and TensorRT optimization",
-      "Reduced inference costs by 60% through batching and caching strategies",
-      "Deployed on Kubernetes with auto-scaling for production workloads",
-    ],
-    tags: ["LLMs", "Optimization", "Kubernetes", "Production", "vLLM"],
-    category: "MLOps" as const,
-    github: "#",
-    image: "/projects/papermind.png",
-  },
-  {
-    id: "recommendation-engine",
-    title: "Personalized Recommendation Engine",
-    description:
-      "Hybrid recommendation system combining collaborative and content-based filtering",
-    details: [
-      "Hybrid approach combining collaborative filtering and content-based methods",
-      "Achieved 0.78 NDCG@10 on production dataset",
-      "Real-time personalization with sub-100ms latency",
-      "A/B tested with 15% improvement in user engagement metrics",
-    ],
-    tags: ["Recommendation", "Machine Learning", "Real-time", "Production", "A/B Testing"],
-    category: "MLOps" as const,
-    github: "#",
-    image: "/projects/feature-store.png",
-  },
 ];
