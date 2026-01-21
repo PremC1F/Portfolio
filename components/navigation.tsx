@@ -54,43 +54,34 @@ export function Navigation() {
 
   return (
     <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         scrolled
-          ? "bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md shadow-sm"
+          ? "bg-white/95 dark:bg-black/95 border-b border-gray-200/50 dark:border-gray-800/50"
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <motion.a
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="flex items-center justify-between h-14">
+          <a
             href="#"
-            className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="text-sm font-medium text-gray-900 dark:text-white tracking-tight"
           >
-            PK
-          </motion.a>
+            Prem Kanaparthi
+          </a>
 
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors relative ${
-                  activeSection === item.href.slice(1)
-                    ? "text-blue-600 dark:text-blue-400"
-                    : "text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
-                }`}
+                className="relative text-sm font-normal text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
               >
                 {item.name}
                 {activeSection === item.href.slice(1) && (
-                  <motion.div
-                    layoutId="activeSection"
-                    className="absolute inset-0 bg-blue-50 dark:bg-blue-950/30 rounded-lg -z-10"
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                  />
+                  <span className="absolute -bottom-px left-0 right-0 h-px bg-gray-900 dark:bg-white" />
                 )}
               </button>
             ))}

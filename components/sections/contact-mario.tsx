@@ -39,10 +39,10 @@ export function ContactMario() {
       
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.div {...fadeInUp}>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-center bg-gradient-to-r from-red-600 via-yellow-500 to-blue-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-red-600 via-yellow-500 to-blue-600 bg-clip-text text-transparent">
             📬 Get In Touch 📬
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-center mb-12 max-w-2xl mx-auto font-semibold">
+          <p className="text-base text-gray-600 dark:text-gray-400 text-center mb-12 max-w-2xl mx-auto font-semibold">
             Ready to start a new adventure? Let's team up and build something amazing!
           </p>
         </motion.div>
@@ -54,7 +54,7 @@ export function ContactMario() {
             transition={{ delay: 0.1, duration: 0.5 }}
             className="space-y-6"
           >
-            <h3 className="text-2xl font-bold mb-6" style={{ color: '#E8A838' }}>
+            <h3 className="text-3xl font-bold mb-6" style={{ color: '#E8A838' }}>
               ⭐ Contact Information
             </h3>
 
@@ -70,7 +70,7 @@ export function ContactMario() {
                     <p className="text-xs font-bold" style={{ color: '#E8A838' }}>
                       📧 EMAIL
                     </p>
-                    <p className="font-bold">{contactInfo.email}</p>
+                    <p className="text-base font-bold">{contactInfo.email}</p>
                   </div>
                 </a>
 
@@ -85,7 +85,7 @@ export function ContactMario() {
                     <p className="text-xs font-bold" style={{ color: '#DC143C' }}>
                       📞 PHONE
                     </p>
-                    <p className="font-bold">{contactInfo.phone}</p>
+                    <p className="text-base font-bold">{contactInfo.phone}</p>
                   </div>
                 </a>
 
@@ -97,7 +97,7 @@ export function ContactMario() {
                     <p className="text-xs font-bold" style={{ color: '#32CD32' }}>
                       📍 LOCATION
                     </p>
-                    <p className="font-bold">{contactInfo.location}</p>
+                    <p className="text-base font-bold">{contactInfo.location}</p>
                   </div>
                 </div>
             </div>
@@ -108,7 +108,7 @@ export function ContactMario() {
                   href={contactInfo.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded text-sm font-bold text-white hover:scale-105 transition-transform"
+                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded text-base font-bold text-white hover:scale-105 transition-transform"
                   style={{ backgroundColor: '#0A66C2', border: '3px solid #004182' }}
                 >
                   <Linkedin className="h-5 w-5" />
@@ -120,7 +120,7 @@ export function ContactMario() {
                   href={contactInfo.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded text-sm font-bold text-white hover:scale-105 transition-transform"
+                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded text-base font-bold text-white hover:scale-105 transition-transform"
                   style={{ backgroundColor: '#24292e', border: '3px solid #000' }}
                 >
                   <Github className="h-5 w-5" />
@@ -140,7 +140,7 @@ export function ContactMario() {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                      className="block text-base font-medium text-gray-700 dark:text-gray-300 mb-2"
                     >
                       Name
                     </label>
@@ -163,7 +163,7 @@ export function ContactMario() {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                      className="block text-base font-medium text-gray-700 dark:text-gray-300 mb-2"
                     >
                       Email
                     </label>
@@ -175,7 +175,7 @@ export function ContactMario() {
                       onChange={(e) =>
                         setFormState({ ...formState, email: e.target.value })
                       }
-                      className="w-full px-4 py-2 rounded-lg border-2 bg-white dark:bg-zinc-900 text-gray-900 dark:text-white outline-none transition font-medium"
+                      className="w-full px-4 py-3 rounded-lg border-2 bg-white dark:bg-zinc-900 text-base text-gray-900 dark:text-white outline-none transition font-medium"
                       style={{ borderColor: '#E8A838' }}
                       onFocus={(e) => e.target.style.boxShadow = '0 0 0 3px rgba(232, 168, 56, 0.2)'}
                       onBlur={(e) => e.target.style.boxShadow = 'none'}
@@ -186,7 +186,7 @@ export function ContactMario() {
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                      className="block text-base font-medium text-gray-700 dark:text-gray-300 mb-2"
                     >
                       Message
                     </label>
@@ -198,7 +198,7 @@ export function ContactMario() {
                         setFormState({ ...formState, message: e.target.value })
                       }
                       rows={5}
-                      className="w-full px-4 py-2 rounded-lg border-2 bg-white dark:bg-zinc-900 text-gray-900 dark:text-white outline-none transition resize-none font-medium"
+                      className="w-full px-4 py-3 rounded-lg border-2 bg-white dark:bg-zinc-900 text-base text-gray-900 dark:text-white outline-none transition resize-none font-medium"
                       style={{ borderColor: '#E8A838' }}
                       onFocus={(e) => e.target.style.boxShadow = '0 0 0 3px rgba(232, 168, 56, 0.2)'}
                       onBlur={(e) => e.target.style.boxShadow = 'none'}

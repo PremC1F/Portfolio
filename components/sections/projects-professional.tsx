@@ -2,120 +2,206 @@
 
 import { motion } from "framer-motion";
 import { projects } from "@/data/projects";
-import { useState } from "react";
-import { Github, ExternalLink } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Project } from "@/data/types";
+import { useState, useRef } from "react";
+import { Github, ExternalLink, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 15 },
+const fadeIn = {
+  initial: { opacity: 0, y: 8 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
-  transition: { duration: 0.3, ease: [0.25, 0.1, 0.25, 1] },
+  transition: { duration: 0.25 },
 };
+
+interface FlippableCardProps {
+  project: typeof projects[0];
+  index: number;
+}
+
+function FlippableProjectCard({ project, index }: FlippableCardProps) {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  return (
+    <div
+      className="flex-shrink-0 w-[380px] h-[480px] snap-center"
+      style={{ perspective: "1000px" }}
+    >
+      <div
+        className="relative w-full h-full cursor-pointer transition-transform duration-300 ease-in-out"
+        style={{
+          transformStyle: "preserve-3d",
+          transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
+        }}
+        onClick={() => setIsFlipped(!isFlipped)}
+      >
+        <div
+          className="absolute inset-0 w-full h-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 overflow-hidden"
+          style={{ backfaceVisibility: "hidden" }}
+        >
+          <div className="relative h-[220px] bg-gray-100 dark:bg-gray-800 overflow-hidden">
+            {project.image && (
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 380px"
+              />
+            )}
+          </div>
+
+          <div className="p-6 flex flex-col h-[260px]">
+            <div className="flex-1 space-y-3">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white line-clamp-2">
+                {project.title}
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-3 leading-relaxed">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {project.tags.slice(0, 4).map((tag: string) => (
+                  <span
+                    key={tag}
+                    className="px-2 py-0.5 bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-400 text-xs"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="flex items-center justify-between pt-3 border-t border-gray-200 dark:border-gray-800">
+              <span className="text-xs text-gray-400 dark:text-gray-500">Click to view details</span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          className="absolute inset-0 w-full h-full bg-gray-900 dark:bg-black border border-gray-800 dark:border-gray-700 overflow-hidden"
+          style={{
+            backfaceVisibility: "hidden",
+            transform: "rotateY(180deg)",
+          }}
+        >
+          <div className="p-6 flex flex-col h-full text-white space-y-4">
+            <div className="flex items-start justify-between">
+              <h3 className="text-lg font-semibold flex-1">{project.title}</h3>
+              {project.github && project.github !== "#" && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="flex items-center gap-1 text-xs text-gray-300 hover:text-white transition-colors"
+                >
+                  <Github className="w-4 h-4" />
+                </a>
+              )}
+            </div>
+            <p className="text-sm leading-relaxed text-gray-300">
+              {project.description}
+            </p>
+            {project.details && project.details.length > 0 && (
+              <div className="flex-1 overflow-y-auto">
+                <ul className="space-y-2 text-xs text-gray-400 leading-relaxed">
+                  {project.details.slice(0, 4).map((detail: string, i: number) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="text-gray-600 mt-1">•</span>
+                      <span>{detail}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {project.github && project.github !== "#" && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="flex items-center gap-2 text-sm text-white hover:text-gray-300 transition-colors pt-2 border-t border-gray-800"
+              >
+                <Github className="w-4 h-4" />
+                <span>View on GitHub</span>
+              </a>
+            )}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsFlipped(false);
+              }}
+              className="text-xs text-gray-400 hover:text-white transition-colors text-center"
+            >
+              Click to flip back
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export function ProjectsProfessional() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
-  const categories = ["All", ...Array.from(new Set(projects.map((p) => p.category)))];
-  const filteredProjects = selectedCategory === "All" ? projects : projects.filter((p) => p.category === selectedCategory);
+  
+  const placeholderProjects: Project[] = [];
+  
+  const allProjects = [...projects, ...placeholderProjects];
+  const categories = ["All", ...Array.from(new Set(allProjects.map((p) => p.category)))];
+  const filteredProjects = selectedCategory === "All" ? allProjects : allProjects.filter((p) => p.category === selectedCategory);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-950">
+    <section id="projects" className="py-24 px-6 lg:px-8 bg-gray-50 dark:bg-black">
       <div className="max-w-6xl mx-auto">
-        <motion.div {...fadeInUp}>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-5 text-center bg-gradient-to-r from-blue-600/90 to-purple-600/85 bg-clip-text text-transparent">
+        <motion.div {...fadeIn}>
+          <h2 className="text-6xl sm:text-7xl font-bold mb-6 text-center text-gray-900 dark:text-white">
             Featured Projects
           </h2>
-          <p className="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Showcasing production-ready AI/ML solutions
+          <p className="text-center text-gray-600 dark:text-gray-400 mb-16 max-w-2xl mx-auto text-xl leading-relaxed">
+            Selected work demonstrating production AI systems and real-world deployment.
           </p>
         </motion.div>
 
-        <motion.div {...fadeInUp} transition={{ delay: 0.05 }} className="flex flex-wrap justify-center gap-2.5 mb-14">
-          {categories.map((category) => (
+        <motion.div {...fadeIn} className="flex gap-4 mb-12 justify-center flex-wrap">
+          {categories.map((cat) => (
             <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-all duration-300 ${
-                selectedCategory === category
-                  ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md"
-                  : "bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700"
+              key={cat}
+              onClick={() => setSelectedCategory(cat)}
+              className={`px-5 py-2 text-lg transition-colors ${
+                selectedCategory === cat
+                  ? "text-gray-900 dark:text-white border-b-2 border-gray-900 dark:border-white"
+                  : "text-gray-500 dark:text-gray-500 hover:text-gray-700 dark:hover:text-gray-300"
               }`}
             >
-              {category}
+              {cat}
             </button>
           ))}
         </motion.div>
 
-        <div className="space-y-8">
-          {filteredProjects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: index * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
-              className="group bg-white dark:bg-gray-900 rounded-2xl overflow-hidden border border-gray-200/50 dark:border-gray-800/50 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-xl transition-all duration-300"
-            >
-              <div className="grid md:grid-cols-[40%_60%] gap-0">
-                <div className="relative bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center min-h-[240px] group-hover:opacity-95 transition-opacity duration-300">
-                  <div className="text-center">
-                    <div className="w-16 h-16 mx-auto mb-3 rounded-2xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 flex items-center justify-center">
-                      <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-purple-600 opacity-40"></div>
-                    </div>
-                    <span className="text-xs font-medium text-gray-500 dark:text-gray-500 uppercase tracking-wide">Project Preview</span>
-                  </div>
-                </div>
+        <div className="relative">
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-gray-50 dark:from-gray-950 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-gray-50 dark:from-gray-950 to-transparent z-10 pointer-events-none"></div>
 
-                <div className="p-6 flex flex-col justify-between">
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-700 dark:text-gray-300 mb-3 leading-relaxed line-clamp-2">
-                      {project.description}
-                    </p>
-                    
-                    <div className="flex flex-wrap gap-1.5 mb-4">
-                      {project.tags.slice(0, 6).map((tag: string) => (
-                        <span
-                          key={tag}
-                          className="px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-md text-xs font-medium"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="flex gap-3 mt-2">
-                    {project.github && project.github !== "#" && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 transition-colors"
-                      >
-                        <Github className="w-4 h-4" />
-                        <span>GitHub</span>
-                      </a>
-                    )}
-                    {project.demo && (
-                      <a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium transition-colors"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        <span>View Case Study</span>
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+          <div
+            ref={scrollRef}
+            className="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-6 px-4 scrollbar-hide"
+            style={{
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+            }}
+          >
+            {filteredProjects.map((project, index) => (
+              <FlippableProjectCard key={project.title} project={project} index={index} />
+            ))}
+          </div>
         </div>
+
+        <style jsx global>{`
+          .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+          }
+        `}</style>
       </div>
     </section>
   );

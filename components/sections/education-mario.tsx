@@ -19,10 +19,10 @@ export function EducationMario() {
     <section id="education" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="max-w-4xl mx-auto">
         <motion.div {...fadeInUp}>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-center bg-gradient-to-r from-red-600 via-yellow-500 to-blue-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-red-600 via-yellow-500 to-blue-600 bg-clip-text text-transparent">
             🎓 Education & Achievements 🏆
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-center mb-12 max-w-2xl mx-auto font-semibold">
+          <p className="text-base text-gray-600 dark:text-gray-400 text-center mb-12 max-w-2xl mx-auto font-semibold">
             Training grounds and trophies collected!
           </p>
         </motion.div>
@@ -32,7 +32,7 @@ export function EducationMario() {
           <motion.h3
             {...fadeInUp}
             transition={{ delay: 0.1, duration: 0.5 }}
-            className="text-2xl font-bold mb-6 flex items-center gap-3"
+            className="text-3xl font-bold mb-6 flex items-center gap-3"
             style={{ color: '#E8A838' }}
           >
             <GraduationCap className="h-7 w-7" />
@@ -57,19 +57,19 @@ export function EducationMario() {
                         {edu.period}
                       </span>
                     </div>
-                    <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+                    <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                       {edu.degree}
                     </h4>
                     <div className="flex items-center gap-2 mb-2" style={{ color: '#E8A838' }}>
                       <GraduationCap className="h-5 w-5" />
                       <p className="font-bold">{edu.institution}</p>
                     </div>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-3 font-semibold">
+                    <p className="text-base text-gray-600 dark:text-gray-400 mb-3 font-semibold">
                       📍 {edu.location}
                     </p>
                     {edu.specialization && (
                       <div className="pt-3" style={{ borderTop: '2px solid #E8A838' }}>
-                        <p className="text-sm text-gray-700 dark:text-gray-300 font-medium">
+                        <p className="text-base text-gray-700 dark:text-gray-300 font-medium">
                           <span className="font-bold" style={{ color: '#E8A838' }}>⚡ Specialization:</span> {edu.specialization}
                         </p>
                       </div>
@@ -85,7 +85,7 @@ export function EducationMario() {
           <motion.h3
             {...fadeInUp}
             transition={{ delay: 0.3, duration: 0.5 }}
-            className="text-2xl font-bold mb-6 flex items-center gap-3"
+            className="text-3xl font-bold mb-6 flex items-center gap-3"
             style={{ color: '#E8A838' }}
           >
             <Trophy className="h-7 w-7" />
@@ -114,11 +114,11 @@ export function EducationMario() {
                             {pub.type === "paper" ? "RESEARCH" : "CERTIFICATE"}
                           </div>
                         </div>
-                        <h4 className="font-bold text-gray-900 dark:text-white mb-2">
+                        <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
                           {pub.title}
                         </h4>
                         {pub.description && (
-                          <p className="text-sm text-gray-600 dark:text-gray-400 mb-3 font-medium">
+                          <p className="text-base text-gray-600 dark:text-gray-400 mb-3 font-medium">
                             {pub.description}
                           </p>
                         )}

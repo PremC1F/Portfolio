@@ -1,114 +1,101 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, GraduationCap, Target, Briefcase, Code2, Award } from "lucide-react";
+import { MapPin, GraduationCap } from "lucide-react";
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 15 },
+const fadeIn = {
+  initial: { opacity: 0, y: 8 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
-  transition: { duration: 0.3, ease: "easeOut" },
+  transition: { duration: 0.25 },
 };
 
 export function AboutProfessional() {
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-950">
-      <div className="max-w-6xl mx-auto">
-        <motion.div {...fadeInUp}>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-5 text-center bg-gradient-to-r from-blue-600/90 to-purple-600/90 bg-clip-text text-transparent">
+    <section id="about" className="py-24 px-6 lg:px-8 bg-gray-50 dark:bg-black">
+      <div className="max-w-5xl mx-auto">
+        <motion.div {...fadeIn}>
+          <h2 className="text-6xl sm:text-7xl font-bold mb-6 text-center text-gray-900 dark:text-white">
             About Me
           </h2>
-          <p className="text-center text-gray-600 dark:text-gray-400 mb-16 max-w-2xl mx-auto leading-relaxed">
-            A brief snapshot of who I am, what I build, and how I approach real-world AI systems.
+          <p className="text-center text-gray-600 dark:text-gray-400 mb-20 max-w-2xl mx-auto text-xl leading-relaxed">
+            A brief snapshot of how I think about building real-world AI systems.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-6 mb-14">
-          <motion.div
-            {...fadeInUp}
-            transition={{ delay: 0.05 }}
-            className="bg-gray-50 dark:bg-gray-900 rounded-2xl p-8 border border-gray-200/50 dark:border-gray-800/50 hover:border-gray-300 dark:hover:border-gray-700 transition-all duration-300"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <Briefcase className="w-5 h-5 text-blue-600/70" />
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Who I Am</h3>
-            </div>
-            
-            <div className="space-y-5">
-              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-[480px]" style={{ lineHeight: "1.7" }}>
-                I'm an AI/ML Engineer focused on building production-ready systems using Large Language Models, Retrieval-Augmented Generation, and MLOps.
-                I care deeply about reliability, scalability, and shipping models that work in real-world environments.
+        <div className="bg-white dark:bg-gray-900 rounded-2xl p-10 lg:p-12 border border-gray-200 dark:border-gray-800">
+          <div className="grid lg:grid-cols-2 gap-16 mb-16">
+            <motion.div {...fadeIn} className="space-y-7">
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white tracking-tight">
+                Who I Am
+              </h3>
+              
+              <p className="text-xl text-gray-700 dark:text-gray-300 leading-[1.75]">
+                I'm an AI/ML engineer focused on building production-ready systems across
+                large language models, retrieval-augmented generation, and MLOps.
               </p>
               
-              <div className="space-y-2 pt-2 border-t border-gray-200 dark:border-gray-800">
-                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-                  <MapPin className="w-4 h-4 opacity-50" />
+              <p className="text-xl text-gray-700 dark:text-gray-300 leading-[1.75]">
+                I care deeply about reliability, scalability, and shipping machine learning
+                systems that work in real-world environments — not just experiments.
+              </p>
+            
+              <div className="space-y-2 pt-6">
+                <div className="flex items-center gap-2 text-base text-gray-500 dark:text-gray-500">
+                  <MapPin className="w-4 h-4" />
                   <span>Rochester, NY</span>
                 </div>
                 
-                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-                  <GraduationCap className="w-4 h-4 opacity-50" />
+                <div className="flex items-center gap-2 text-base text-gray-500 dark:text-gray-500">
+                  <GraduationCap className="w-4 h-4" />
                   <span>MS in Artificial Intelligence — Rochester Institute of Technology</span>
                 </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
 
-          <motion.div
-            {...fadeInUp}
-            transition={{ delay: 0.1 }}
-            className="bg-gray-50 dark:bg-gray-900 rounded-2xl p-8 border border-gray-200/50 dark:border-gray-800/50 hover:border-gray-300 dark:hover:border-gray-700 transition-all duration-300"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <Target className="w-5 h-5 text-purple-600/70" />
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">What I Work On</h3>
-            </div>
-            
-            <div className="space-y-2.5">
+            <motion.div {...fadeIn} className="space-y-7">
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white tracking-tight">
+                What I Work On
+              </h3>
+              
+              <div className="space-y-5 pt-2">
+                {[
+                  "Large Language Models & Retrieval-Augmented Generation",
+                  "MLOps & Production Machine Learning Systems",
+                  "Computer Vision & Applied Natural Language Processing",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <div className="w-1 h-1 rounded-full bg-gray-400 dark:bg-gray-600 mt-2.5 flex-shrink-0"></div>
+                    <span className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+
+          <motion.div {...fadeIn} className="pt-12 border-t border-gray-200 dark:border-gray-800">
+            <p className="text-sm text-gray-500 dark:text-gray-500 text-center mb-10 uppercase tracking-wide">
+              A snapshot of my experience so far
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
-                "LLMs & Retrieval-Augmented Generation",
-                "MLOps & Production ML Systems",
-                "Computer Vision & Applied NLP",
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-3 px-4 py-3 bg-white/50 dark:bg-gray-800/50 rounded-lg border border-gray-200/30 dark:border-gray-700/30 hover:bg-white dark:hover:bg-gray-800 hover:shadow-sm transition-all duration-300"
-                >
-                  <div className="w-1.5 h-1.5 rounded-full bg-blue-600/70"></div>
-                  <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{item}</span>
+                { value: "3+", label: "Years of Hands-On ML Experience" },
+                { value: "10+", label: "End-to-End Systems Built" },
+                { value: "36+", label: "Tools & Frameworks Used" },
+                { value: "2+", label: "Research / Technical Publications" },
+              ].map((stat, i) => (
+                <div key={i} className="text-center">
+                  <div className="text-3xl font-semibold text-gray-900 dark:text-white mb-2">
+                    {stat.value}
+                  </div>
+                  <div className="text-base text-gray-500 dark:text-gray-500 leading-snug">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
           </motion.div>
         </div>
-
-        <motion.div
-          {...fadeInUp}
-          transition={{ delay: 0.15 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4"
-        >
-          {[
-            { value: "3+", label: "Years of Hands-On ML Experience" },
-            { value: "10+", label: "End-to-End Projects Built" },
-            { value: "36+", label: "Tools & Frameworks Used" },
-            { value: "2+", label: "Research / Technical Publications" },
-          ].map((stat, i) => (
-            <div
-              key={i}
-              className="bg-gray-50 dark:bg-gray-900 rounded-xl p-5 border border-gray-200/50 dark:border-gray-800/50 text-center relative"
-            >
-              {i < 3 && (
-                <div className="absolute top-0 right-0 bottom-0 w-px bg-gray-200 dark:bg-gray-800 hidden md:block"></div>
-              )}
-              <div className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                {stat.value}
-              </div>
-              <div className="text-xs text-gray-600 dark:text-gray-400 leading-tight">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </motion.div>
       </div>
     </section>
   );

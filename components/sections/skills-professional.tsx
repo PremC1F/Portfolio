@@ -1,49 +1,106 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { skillCategories } from "@/data/skills";
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
+const fadeIn = {
+  initial: { opacity: 0, y: 8 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
-  transition: { duration: 0.5 },
+  transition: { duration: 0.25 },
 };
 
+interface SkillLayer {
+  title: string;
+  description: string;
+  skills: string[];
+}
+
 export function SkillsProfessional() {
+  const skillLayers: SkillLayer[] = [
+    {
+      title: "Modeling & Intelligence",
+      description: "Training, adapting, and evaluating models for real-world performance.",
+      skills: [
+        "PyTorch",
+        "TensorFlow",
+        "Scikit-learn",
+        "Hugging Face",
+        "Large Language Models",
+        "Retrieval-Augmented Generation",
+        "Computer Vision",
+        "NLP",
+        "Deep Learning",
+      ],
+    },
+    {
+      title: "Inference & Applications",
+      description: "Turning models into reliable, usable applications.",
+      skills: [
+        "LangChain",
+        "FastAPI",
+        "Prompt Engineering",
+        "Feature Engineering",
+        "Real-time Inference",
+      ],
+    },
+    {
+      title: "Infrastructure & MLOps",
+      description: "Deploying, scaling, and monitoring production AI systems.",
+      skills: [
+        "AWS Bedrock",
+        "AWS SageMaker",
+        "Docker",
+        "Kubernetes",
+        "MLflow",
+        "CI/CD",
+        "GitHub Actions",
+        "Terraform",
+        "Palantir Foundry",
+      ],
+    },
+    {
+      title: "Data & Platforms",
+      description: "Building data pipelines and analytics foundations.",
+      skills: [
+        "PySpark",
+        "SQL",
+        "Snowflake",
+        "PostgreSQL",
+        "MongoDB",
+        "Pandas",
+        "NumPy",
+      ],
+    },
+  ];
+
   return (
-    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
+    <section id="skills" className="py-24 px-6 lg:px-8 bg-gray-50 dark:bg-black">
       <div className="max-w-6xl mx-auto">
-        <motion.div {...fadeInUp}>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Technical Skills
+        <motion.div {...fadeIn}>
+          <h2 className="text-6xl sm:text-7xl font-bold mb-6 text-center text-gray-900 dark:text-white">
+            How I Build AI Systems
           </h2>
-          <p className="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
-            Comprehensive expertise across the AI/ML stack
+          <p className="text-center text-gray-600 dark:text-gray-400 mb-20 max-w-2xl mx-auto text-xl leading-relaxed">
+            A practical breakdown of the layers behind my work.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {skillCategories.map((category, index) => (
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
+          {skillLayers.map((layer, index) => (
             <motion.div
-              key={category.category}
-              {...fadeInUp}
-              transition={{ delay: 0.1 * (index + 1) }}
-              className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700"
+              key={layer.title}
+              {...fadeIn}
+              className="p-10 bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 space-y-5"
             >
-              <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">
-                {category.category}
+              <h3 className="text-3xl font-semibold text-gray-900 dark:text-white">
+                {layer.title}
               </h3>
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill: string) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-lg text-sm font-medium"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+              <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+                {layer.description}
+              </p>
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed pt-2">
+                {layer.skills.join(", ")}
+              </p>
             </motion.div>
           ))}
         </div>

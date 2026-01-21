@@ -18,7 +18,7 @@ export function AboutMario() {
 
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.div {...fadeInUp}>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center bg-gradient-to-r from-red-600 via-yellow-500 to-blue-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-center bg-gradient-to-r from-red-600 via-yellow-500 to-blue-600 bg-clip-text text-transparent">
             Player Profile • World 1-1
           </h2>
         </motion.div>
@@ -37,7 +37,7 @@ export function AboutMario() {
                 <div className="text-sm font-bold text-gray-600 dark:text-gray-400 mb-1">
                   PLAYER NAME
                 </div>
-                <h3 className="text-3xl font-bold text-red-600 dark:text-red-400">
+                <h3 className="text-4xl font-bold text-red-600 dark:text-red-400">
                   PREM BABU
                 </h3>
               </div>
@@ -45,7 +45,7 @@ export function AboutMario() {
                 <div className="text-sm font-bold text-gray-600 dark:text-gray-400 mb-1">
                   SCORE
                 </div>
-                <div className="text-3xl font-bold" style={{ color: '#E8A838' }}>
+                <div className="text-4xl font-bold" style={{ color: '#E8A838' }}>
                   ★999
                 </div>
               </div>
@@ -69,17 +69,17 @@ export function AboutMario() {
 
             {/* Description */}
             <div className="space-y-4 mb-6">
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed">
                 <strong className="text-red-600 dark:text-red-400">Class:</strong> Machine Learning Engineer
               </p>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm">
+              <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed">
                 <strong className="text-red-600 dark:text-red-400">Current Quest:</strong> I'm a Machine Learning Engineer passionate about turning complex AI
                 research into production-ready systems. Currently pursuing my
                 Master's in Artificial Intelligence at RIT, I specialize in building
                 scalable LLM applications, RAG systems, and MLOps pipelines that
                 solve real-world problems.
               </p>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm">
+              <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed">
                 My experience spans from designing multi-model inference platforms
                 at Concentrix to developing intelligent document processing systems.
                 I thrive at the intersection of research and engineering, where I
@@ -90,7 +90,7 @@ export function AboutMario() {
 
             {/* Stats */}
             <div className="pt-4" style={{ borderTop: '4px solid #E8A838' }}>
-              <div className="text-sm font-bold text-gray-700 dark:text-gray-300 mb-3">
+              <div className="text-base font-bold text-gray-700 dark:text-gray-300 mb-3">
                 ⭐ PLAYER STATS ⭐
               </div>
               <div className="space-y-2">
@@ -139,14 +139,14 @@ export function AboutMario() {
             >
               <div className="flex items-center gap-3 mb-3">
                 <div className="text-2xl">🍄</div>
-                <h3 className="font-bold text-lg text-green-600 dark:text-green-400">
+                <h3 className="font-bold text-xl text-green-600 dark:text-green-400">
                   POWER-UP: EDUCATION
                 </h3>
               </div>
-              <p className="text-gray-700 dark:text-gray-300 text-sm font-semibold">
+              <p className="text-gray-700 dark:text-gray-300 text-base font-semibold">
                 MS in AI at Rochester Institute of Technology
                 <br />
-                <span className="text-xs text-gray-600 dark:text-gray-400">
+                <span className="text-sm text-gray-600 dark:text-gray-400">
                   🎓 Graduating May 2026
                 </span>
               </p>

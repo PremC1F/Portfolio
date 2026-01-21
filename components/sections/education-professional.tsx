@@ -3,106 +3,138 @@
 import { motion } from "framer-motion";
 import { education } from "@/data/education";
 import { publications } from "@/data/publications";
-import { GraduationCap, FileText, Award } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
+const fadeIn = {
+  initial: { opacity: 0, y: 8 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
-  transition: { duration: 0.5 },
+  transition: { duration: 0.25 },
 };
 
 export function EducationProfessional() {
   return (
-    <section id="education" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
+    <section id="education" className="py-24 px-6 lg:px-8 bg-gray-50 dark:bg-black">
       <div className="max-w-4xl mx-auto">
-        <motion.div {...fadeInUp}>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <motion.div {...fadeIn}>
+          <h2 className="text-6xl sm:text-7xl font-bold mb-6 text-center text-gray-900 dark:text-white">
             Education & Achievements
           </h2>
-          <p className="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
-            Academic background and research contributions
+          <p className="text-center text-gray-600 dark:text-gray-400 mb-20 max-w-2xl mx-auto text-xl leading-relaxed">
+            Academic background and research experience.
           </p>
         </motion.div>
 
-        <div className="space-y-8">
-          {education.map((edu: any, index: number) => (
-            <motion.div
-              key={edu.degree}
-              {...fadeInUp}
-              transition={{ delay: 0.1 * (index + 1) }}
-              className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border-l-4 border-purple-600"
-            >
-              <div className="flex items-start justify-between mb-3">
-                <GraduationCap className="w-6 h-6 text-purple-600" />
-                <span className="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 rounded text-xs font-semibold">
-                  {edu.period}
-                </span>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                {edu.degree}
+        <div className="space-y-16">
+          <div className="relative">
+            <motion.div {...fadeIn} className="mb-8">
+              <h3 className="text-3xl font-semibold text-gray-900 dark:text-white">
+                Education
               </h3>
-              <p className="text-blue-600 dark:text-blue-400 font-semibold mb-1">
-                {edu.institution}
-              </p>
-              <p className="text-gray-600 dark:text-gray-400 text-sm mb-2">
-                {edu.location}
-              </p>
-              {edu.specialization && (
-                <p className="text-gray-700 dark:text-gray-300 text-sm">
-                  <span className="font-semibold">Specialization:</span> {edu.specialization}
-                </p>
-              )}
             </motion.div>
-          ))}
-        </div>
+            
+            <div className="absolute left-[7px] top-16 bottom-0 w-px bg-gray-200 dark:bg-gray-800" />
 
-        <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="mt-12">
-          <h3 className="text-2xl font-bold mb-6 text-center text-gray-900 dark:text-white">
-            Publications & Certifications
-          </h3>
-          <div className="grid md:grid-cols-2 gap-4">
-            {publications.map((pub: any, index: number) => (
-              <motion.div
-                key={pub.title}
-                {...fadeInUp}
-                transition={{ delay: 0.1 * (index + 1) }}
-                className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg"
-              >
-                <div className="flex items-start gap-3">
-                  {pub.type === "paper" ? (
-                    <FileText className="w-5 h-5 text-blue-600 mt-1" />
-                  ) : (
-                    <Award className="w-5 h-5 text-purple-600 mt-1" />
-                  )}
-                  <div className="flex-1">
-                    <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded text-xs font-semibold">
-                      {pub.type === "paper" ? "Research" : "Certificate"}
-                    </span>
-                    <h4 className="font-bold text-gray-900 dark:text-white mt-2 mb-1">
-                      {pub.title}
-                    </h4>
-                    {pub.description && (
-                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
-                        {pub.description}
-                      </p>
-                    )}
-                    {pub.link && (
-                      <a
-                        href={pub.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-600 dark:text-blue-400 text-sm font-semibold hover:underline"
-                      >
-                        View {pub.type === "paper" ? "Paper" : "Certificate"} →
-                      </a>
-                    )}
+            <div className="space-y-12">
+              {education.map((edu: any, index: number) => (
+                <motion.div
+                  key={edu.degree}
+                  {...fadeIn}
+                  className="relative pl-10"
+                >
+                  <div className="absolute left-0 top-3 w-4 h-4 rounded-full border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-black flex items-center justify-center">
+                    <div className="w-1.5 h-1.5 rounded-full bg-gray-400 dark:bg-gray-600" />
                   </div>
-                </div>
-              </motion.div>
-            ))}
+
+                  <div className="pb-8 border-b border-gray-200/50 dark:border-gray-800/50 last:border-0">
+                    <div className="mb-3">
+                      <h4 className="text-3xl font-semibold text-gray-900 dark:text-white mb-3">
+                        {edu.degree}
+                      </h4>
+                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-lg text-gray-500 dark:text-gray-500">
+                        <span className="font-medium">{edu.institution}</span>
+                        <span>•</span>
+                        <span>{edu.location}</span>
+                        <span>•</span>
+                        <span>{edu.period}</span>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </motion.div>
+
+          <motion.div {...fadeIn} className="space-y-8">
+            <h3 className="text-4xl font-semibold text-gray-900 dark:text-white">
+              Research
+            </h3>
+            
+            <div className="space-y-6">
+              {publications.filter((pub: any) => pub.type === "paper").map((pub: any, index: number) => (
+                <div
+                  key={pub.title}
+                  className="pb-6 border-b border-gray-200/50 dark:border-gray-800/50 last:border-0 last:pb-0 space-y-2"
+                >
+                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
+                    {pub.title}
+                  </h4>
+                  {pub.description && (
+                    <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+                      {pub.description}
+                    </p>
+                  )}
+                  {pub.link && (
+                    <a
+                      href={pub.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-base text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+                    >
+                      <span>View paper</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  )}
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div {...fadeIn} className="space-y-8">
+            <h3 className="text-4xl font-semibold text-gray-900 dark:text-white">
+              Certifications
+            </h3>
+            
+            <div className="space-y-6">
+              {publications.filter((pub: any) => pub.type === "certification").map((pub: any, index: number) => (
+                <div
+                  key={pub.title}
+                  className="pb-6 border-b border-gray-200/50 dark:border-gray-800/50 last:border-0 last:pb-0 space-y-2"
+                >
+                  <h4 className="text-xl font-semibold text-gray-900 dark:text-white">
+                    {pub.title}
+                  </h4>
+                  {pub.description && (
+                    <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+                      {pub.description}
+                    </p>
+                  )}
+                  {pub.link && (
+                    <a
+                      href={pub.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-lg text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+                    >
+                      <span>View {pub.type === "paper" ? "paper" : "certificate"}</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  )}
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

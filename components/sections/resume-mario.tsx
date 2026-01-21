@@ -66,10 +66,10 @@ export function ResumeMario() {
               📜 Player Profile Document
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-red-600 via-yellow-500 to-blue-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-red-600 via-yellow-500 to-blue-600 bg-clip-text text-transparent">
             🎮 Download My Resume 🎮
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto font-semibold">
+          <p className="text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto font-semibold">
             Grab your copy of my complete adventure log and achievements!
           </p>
         </motion.div>
@@ -123,23 +123,23 @@ export function ResumeMario() {
 
                 {/* Content */}
                 <div className="flex-1 text-center md:text-left">
-                  <h3 className="text-2xl font-bold mb-3" style={{ color: '#E8A838' }}>
+                  <h3 className="text-3xl font-bold mb-3" style={{ color: '#E8A838' }}>
                     🌟 Prem Babu Kanaparthi
                   </h3>
-                  <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 font-semibold">
+                  <p className="text-xl text-gray-700 dark:text-gray-300 mb-6 font-semibold">
                     AI/ML Engineer | MS in Artificial Intelligence
                   </p>
 
                   <div className="space-y-3 mb-8">
-                    <div className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300 font-medium">
+                    <div className="flex items-center gap-2 text-base text-gray-700 dark:text-gray-300 font-medium">
                       <span className="text-lg">🪙</span>
                       <span>3+ years of experience in ML/AI</span>
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300 font-medium">
+                    <div className="flex items-center gap-2 text-base text-gray-700 dark:text-gray-300 font-medium">
                       <span className="text-lg">🪙</span>
                       <span>Expertise in LLMs, RAG, and MLOps</span>
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300 font-medium">
+                    <div className="flex items-center gap-2 text-base text-gray-700 dark:text-gray-300 font-medium">
                       <span className="text-lg">🪙</span>
                       <span>Published research in neural networks</span>
                     </div>
@@ -164,10 +164,6 @@ export function ResumeMario() {
                       👁️ View Online
                     </button>
                   </div>
-
-                  <p className="text-xs text-gray-600 dark:text-gray-400 mt-4 font-medium">
-                    ⭐ <strong>Tip:</strong> Place your resume PDF in <code className="px-2 py-1 rounded font-bold" style={{ backgroundColor: 'rgba(232, 168, 56, 0.2)', color: '#E8A838' }}>public/resume.pdf</code> to enable downloads
-                  </p>
                 </div>
               </div>
           </div>
@@ -184,7 +180,7 @@ export function ResumeMario() {
               <div className="text-3xl font-bold mb-2" style={{ color: '#E8A838' }}>
                 3+
               </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400 font-bold">
+              <div className="text-base text-gray-600 dark:text-gray-400 font-bold">
                 Years Experience
               </div>
           </div>
@@ -194,7 +190,7 @@ export function ResumeMario() {
               <div className="text-3xl font-bold mb-2" style={{ color: '#DC143C' }}>
                 10+
               </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400 font-bold">
+              <div className="text-base text-gray-600 dark:text-gray-400 font-bold">
                 Projects Delivered
               </div>
           </div>
@@ -204,7 +200,7 @@ export function ResumeMario() {
               <div className="text-3xl font-bold mb-2" style={{ color: '#4A90E2' }}>
                 36+
               </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400 font-bold">
+              <div className="text-base text-gray-600 dark:text-gray-400 font-bold">
                 Technical Skills
               </div>
           </div>

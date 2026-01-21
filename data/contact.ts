@@ -3,7 +3,7 @@ import { ContactInfo } from "./types";
 export const contactInfo: ContactInfo = {
   email: "prem.b.kanaparthi@gmail.com",
   phone: "585-290-3036",
-  linkedin: "#", // Replace with actual LinkedIn URL
-  github: "#", // Replace with actual GitHub URL
+  linkedin: "https://www.linkedin.com/in/prembk03/",
+  github: "https://github.com/PremC1F",
   location: "Rochester, NY",
 };

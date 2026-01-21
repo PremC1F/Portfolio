@@ -90,16 +90,20 @@ export function ProjectsMario() {
           ))}
         </motion.div>
 
-        {/* Projects grid - Mario Level Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              {...fadeInUp}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              layout
-            >
-              <div className="mario-card p-6 h-full flex flex-col">
+        {/* Projects horizontal scroll - Mario Level Cards */}
+        <div className="relative">
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-gray-950 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-gray-950 to-transparent z-10 pointer-events-none"></div>
+
+          <div className="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-6 px-4 scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            {filteredProjects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                {...fadeInUp}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                className="flex-shrink-0 w-[340px] snap-center"
+              >
+                <div className="mario-card p-6 h-full flex flex-col">
                 {/* Level Header */}
                 <div className="flex items-center justify-between mb-4">
                   <div
@@ -172,11 +176,18 @@ export function ProjectsMario() {
                       Demo
                     </a>
                   )}
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </div>
+
+        <style jsx global>{`
+          .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+          }
+        `}</style>
 
         {/* Mario Tip */}
         <motion.div

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Mail, FileText, Star } from "lucide-react";
+import { ArrowDown, Mail, FileText, Star, Twitter, BookOpen, Github, Linkedin, GraduationCap } from "lucide-react";
 import Image from "next/image";
 import { MarioBackground } from "@/components/mario-background";
 import { useState } from "react";
@@ -222,7 +222,7 @@ export function HeroMario({ scrollToSection }: HeroMarioProps) {
             </motion.div>
 
             <motion.h1
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 mario-text"
+              className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-4 mario-text"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -237,7 +237,7 @@ export function HeroMario({ scrollToSection }: HeroMarioProps) {
             </motion.h1>
 
             <motion.p
-              className="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-6 font-bold"
+              className="text-xl sm:text-2xl text-gray-700 dark:text-gray-300 mb-6 font-bold"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
@@ -247,11 +247,11 @@ export function HeroMario({ scrollToSection }: HeroMarioProps) {
             </motion.p>
 
             <motion.p
-              className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 max-w-xl mx-auto lg:mx-0"
+              className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-xl mx-auto lg:mx-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              style={{ lineHeight: '1.6' }}
+              style={{ lineHeight: '1.7' }}
             >
               Jumping through AI research levels and defeating production bugs!
               Building scalable LLM applications, RAG systems, and MLOps pipelines.
@@ -290,6 +290,56 @@ export function HeroMario({ scrollToSection }: HeroMarioProps) {
                 Contact Me
                 <Mail className="ml-2 h-4 w-4" />
               </Button>
+            </motion.div>
+
+            {/* Social Links */}
+            <motion.div
+              className="flex gap-4 justify-center lg:justify-start pt-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+            >
+              <a
+                href="https://github.com/PremC1F"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 dark:text-gray-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors duration-200"
+              >
+                <Github className="w-6 h-6" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/prembk03/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-200"
+              >
+                <Linkedin className="w-6 h-6" />
+              </a>
+              <a
+                href="https://x.com/Premxai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors duration-200"
+              >
+                <Twitter className="w-6 h-6" />
+              </a>
+              <a
+                href="https://medium.com/@prem.b.kanaparthi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 dark:text-gray-300 hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors duration-200"
+              >
+                <BookOpen className="w-6 h-6" />
+              </a>
+              <a
+                href="https://scholar.google.com/citations?user=yIWQSykAAAAJ&hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 dark:text-gray-300 hover:text-green-500 dark:hover:text-green-400 transition-colors duration-200"
+                title="Google Scholar"
+              >
+                <GraduationCap className="w-6 h-6" />
+              </a>
             </motion.div>
           </motion.div>
         </div>

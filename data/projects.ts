@@ -14,7 +14,8 @@ export const projects: Project[] = [
     ],
     tags: ["RAG", "LangChain", "Multi-Agent", "NLP", "Vector DB"],
     category: "RAG Systems",
-    github: "#", // Replace with actual GitHub link
+    github: "https://github.com/PremC1F/papermind",
+    image: "/projects/papermind.png",
   },
   {
     id: "feature-store",
@@ -36,7 +37,8 @@ export const projects: Project[] = [
       "Kafka",
     ],
     category: "MLOps",
-    github: "#", // Replace with actual GitHub link
+    github: "https://github.com/PremC1F/ml-feature-platform",
+    image: "/projects/feature-store.png",
   },
   {
     id: "document-intelligence",
@@ -51,6 +53,39 @@ export const projects: Project[] = [
     ],
     tags: ["Multi-Agent", "RAG", "FastAPI", "Document Processing", "Qdrant"],
     category: "NLP",
-    github: "#", // Replace with actual GitHub link
+    github: "https://github.com/PremC1F/document-intelligence-system",
+    image: "/projects/document-intelligence.png",
+  },
+  {
+    id: "image-classification",
+    title: "Advanced Image Classification Pipeline",
+    description:
+      "Deep learning pipeline for image classification with 94% accuracy",
+    details: [
+      "CNN-based image classification achieving 94% accuracy on custom dataset",
+      "Transfer learning with ResNet and EfficientNet architectures",
+      "Data augmentation pipeline for robust model training",
+      "Deployed with TensorFlow Serving for real-time inference",
+    ],
+    tags: ["Computer Vision", "TensorFlow", "CNN", "Transfer Learning", "Deep Learning"],
+    category: "Computer Vision" as const,
+    github: "https://github.com/PremC1F/Advanced-Image-Classification-Pipeline",
+    image: "/projects/image-classification.png",
+  },
+  {
+    id: "sentiment-analyzer",
+    title: "Multi-Language Sentiment Analysis System",
+    description:
+      "Transformer-based sentiment analysis supporting 10+ languages",
+    details: [
+      "Fine-tuned BERT model for multi-language sentiment analysis",
+      "Supports 10+ languages with 89% average accuracy",
+      "REST API built with FastAPI for real-time sentiment scoring",
+      "Integrated with streaming data pipeline for social media monitoring",
+    ],
+    tags: ["NLP", "BERT", "Transformers", "FastAPI", "Multi-Language"],
+    category: "NLP" as const,
+    github: "https://github.com/PremC1F/Multi-Language-Sentiment-Analysis-System-",
+    image: "/projects/sentiment-analyzer.png",
   },
 ];

@@ -91,10 +91,10 @@ export function SkillsMario() {
 
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.div {...fadeInUp}>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-center bg-gradient-to-r from-red-600 via-yellow-500 to-blue-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-red-600 via-yellow-500 to-blue-600 bg-clip-text text-transparent">
             🌟 Power-Up Collection 🌟
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-center mb-12 max-w-2xl mx-auto font-semibold">
+          <p className="text-base text-gray-600 dark:text-gray-400 text-center mb-12 max-w-2xl mx-auto font-semibold">
             Skills and technologies I've mastered on this adventure!
           </p>
         </motion.div>
@@ -137,7 +137,7 @@ export function SkillsMario() {
                     {powerUp.powerUpName}
                   </div>
                   <h3
-                    className="text-lg font-bold"
+                    className="text-xl font-bold"
                     style={{ color: powerUp.color }}
                   >
                     {category.category}
@@ -146,14 +146,14 @@ export function SkillsMario() {
 
                 {/* Skills */}
                 <div className="space-y-2">
-                  <div className="text-xs font-bold text-gray-600 dark:text-gray-400 text-center mb-3">
+                  <div className="text-sm font-bold text-gray-600 dark:text-gray-400 text-center mb-3">
                     ⚡ EQUIPPED SKILLS ⚡
                   </div>
                   <div className="flex flex-wrap gap-2 justify-center">
                     {category.skills.map((skill) => (
                       <motion.span
                         key={skill}
-                        className="px-2 py-1 rounded text-xs font-bold cursor-pointer"
+                        className="px-2 py-1 rounded text-sm font-bold cursor-pointer"
                         style={{
                           backgroundColor: `${powerUp.color}15`,
                           color: powerUp.color,
@@ -174,7 +174,7 @@ export function SkillsMario() {
 
                 {/* Power-up status */}
                 <div className="mt-6 pt-4" style={{ borderTop: `3px solid ${powerUp.color}30` }}>
-                  <div className="flex items-center justify-center gap-2 text-xs text-gray-600 dark:text-gray-400 font-bold">
+                  <div className="flex items-center justify-center gap-2 text-sm text-gray-600 dark:text-gray-400 font-bold">
                     <Star className="w-4 h-4" style={{ color: powerUp.color }} />
                     <span>POWER-UP ACTIVE!</span>
                   </div>
@@ -193,7 +193,7 @@ export function SkillsMario() {
           <div className="mario-card p-8 inline-block max-w-3xl">
             <div className="flex items-center justify-center gap-3 mb-6">
               <Flame className="w-8 h-8 text-red-500" />
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+              <h3 className="text-3xl font-bold text-gray-900 dark:text-white">
                 💫 SKILL INVENTORY 💫
               </h3>
               <Zap className="w-8 h-8 text-yellow-500" />
@@ -204,7 +204,7 @@ export function SkillsMario() {
                 <div className="text-4xl font-bold text-red-600 dark:text-red-400 mb-1">
                   3
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 font-semibold">
+                <div className="text-base text-gray-600 dark:text-gray-400 font-semibold">
                   Power-Ups
                 </div>
               </div>
@@ -212,7 +212,7 @@ export function SkillsMario() {
                 <div className="text-4xl font-bold mb-1" style={{ color: '#E8A838' }}>
                   36+
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 font-semibold">
+                <div className="text-base text-gray-600 dark:text-gray-400 font-semibold">
                   Total Skills
                 </div>
               </div>
@@ -220,13 +220,13 @@ export function SkillsMario() {
                 <div className="text-4xl font-bold mb-1">
                   ⭐⭐⭐
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 font-semibold">
+                <div className="text-base text-gray-600 dark:text-gray-400 font-semibold">
                   Skill Level
                 </div>
               </div>
             </div>
 
-            <p className="text-sm text-gray-700 dark:text-gray-300 font-semibold">
+            <p className="text-base text-gray-700 dark:text-gray-300 font-semibold">
               🍄 "It's-a me! A Machine Learning Engineer with all the power-ups needed
               to build amazing AI systems!" 🌟
             </p>

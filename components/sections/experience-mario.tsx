@@ -22,10 +22,10 @@ export function ExperienceMario() {
       
       <div className="max-w-4xl mx-auto relative z-10">
         <motion.div {...fadeInUp}>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-center bg-gradient-to-r from-red-600 via-yellow-500 to-blue-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-red-600 via-yellow-500 to-blue-600 bg-clip-text text-transparent">
             🚩 Career Journey 🚩
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-center mb-12 max-w-2xl mx-auto font-semibold">
+          <p className="text-base text-gray-600 dark:text-gray-400 text-center mb-12 max-w-2xl mx-auto font-semibold">
             Every level completed, every boss defeated!
           </p>
         </motion.div>
@@ -71,7 +71,7 @@ export function ExperienceMario() {
                             ))}
                           </div>
                         </div>
-                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                           {exp.role}
                         </h3>
                         <div className="flex items-center gap-2 mb-2" style={{ color: '#E8A838' }}>
@@ -81,7 +81,7 @@ export function ExperienceMario() {
                       </div>
                     </div>
 
-                    <div className="flex flex-wrap gap-4 text-sm text-gray-600 dark:text-gray-400 mb-4">
+                    <div className="flex flex-wrap gap-4 text-base text-gray-600 dark:text-gray-400 mb-4">
                       <div className="flex items-center gap-2 px-3 py-1 rounded" style={{ backgroundColor: 'rgba(232, 168, 56, 0.1)', border: '2px solid rgba(232, 168, 56, 0.3)' }}>
                         <Calendar className="h-4 w-4" style={{ color: '#E8A838' }} />
                         <span className="font-semibold">{exp.period}</span>
@@ -93,12 +93,12 @@ export function ExperienceMario() {
                     </div>
 
                     <div className="pt-4" style={{ borderTop: '3px solid #E8A838' }}>
-                      <div className="text-xs font-bold mb-3" style={{ color: '#E8A838' }}>⚡ ACHIEVEMENTS UNLOCKED ⚡</div>
+                      <div className="text-sm font-bold mb-3" style={{ color: '#E8A838' }}>⚡ ACHIEVEMENTS UNLOCKED ⚡</div>
                       <ul className="space-y-2">
                         {exp.achievements.map((achievement, i) => (
                           <li
                             key={i}
-                            className="text-gray-700 dark:text-gray-300 pl-6 relative flex items-start gap-2"
+                            className="text-base text-gray-700 dark:text-gray-300 pl-6 relative flex items-start gap-2"
                           >
                             <span className="absolute left-0 top-1 text-sm">🪙</span>
                             <span className="font-medium">{achievement}</span>
