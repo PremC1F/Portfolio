@@ -13,13 +13,15 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://premxai.com"),
   title: "Prem Babu Kanaparthi | AI/ML Engineer",
   description:
-    "AI/ML Engineer specializing in LLMs, RAG Systems, and MLOps. Currently pursuing MS in Artificial Intelligence at RIT.",
+    "AI/ML Engineer specializing in Large Language Models, Retrieval-Augmented Generation (RAG), and production-grade MLOps systems. Focused on building scalable, reliable AI solutions.",
   keywords: [
     "AI Engineer",
     "Machine Learning",
     "ML Engineer",
     "LLMs",
+    "Large Language Models",
     "RAG Systems",
+    "Retrieval-Augmented Generation",
     "MLOps",
     "Deep Learning",
     "NLP",
@@ -30,13 +32,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Prem Babu Kanaparthi | AI/ML Engineer",
     description:
-      "AI/ML Engineer specializing in LLMs, RAG Systems, and MLOps",
-    type: "website",
+      "AI/ML Engineer specializing in Large Language Models, Retrieval-Augmented Generation (RAG), and production-grade MLOps systems. Focused on building scalable, reliable AI solutions.",
+    type: "article",
     url: "https://premxai.com",
     siteName: "Prem Babu Kanaparthi Portfolio",
     images: [
       {
-        url: "/og.png",
+        url: "https://premxai.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "Prem Babu Kanaparthi - AI/ML Engineer",
@@ -47,8 +49,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Prem Babu Kanaparthi | AI/ML Engineer",
     description:
-      "AI/ML Engineer specializing in LLMs, RAG Systems, and MLOps",
-    images: ["/og.png"],
+      "AI/ML Engineer specializing in Large Language Models, Retrieval-Augmented Generation (RAG), and production-grade MLOps systems. Focused on building scalable, reliable AI solutions.",
+    images: ["https://premxai.com/og-image.png"],
   },
   alternates: {
     canonical: "https://premxai.com",
