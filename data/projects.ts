@@ -14,7 +14,7 @@ export const projects: Project[] = [
     ],
     tags: ["RAG", "LangChain", "Multi-Agent", "NLP", "Vector DB"],
     category: "RAG Systems",
-    github: "https://github.com/PremC1F/papermind",
+    github: "https://github.com/premxai/papermind",
     image: "/projects/papermind.png",
   },
   {
@@ -37,7 +37,7 @@ export const projects: Project[] = [
       "Kafka",
     ],
     category: "MLOps",
-    github: "https://github.com/PremC1F/ml-feature-platform",
+    github: "https://github.com/premxai/ml-feature-platform",
     image: "/projects/feature-store.png",
   },
   {
@@ -53,7 +53,7 @@ export const projects: Project[] = [
     ],
     tags: ["Multi-Agent", "RAG", "FastAPI", "Document Processing", "Qdrant"],
     category: "NLP",
-    github: "https://github.com/PremC1F/document-intelligence-system",
+    github: "https://github.com/premxai/document-intelligence-system",
     image: "/projects/document-intelligence.png",
   },
   {
@@ -69,7 +69,7 @@ export const projects: Project[] = [
     ],
     tags: ["Computer Vision", "TensorFlow", "CNN", "Transfer Learning", "Deep Learning"],
     category: "Computer Vision" as const,
-    github: "https://github.com/PremC1F/Advanced-Image-Classification-Pipeline",
+    github: "https://github.com/premxai/Advanced-Image-Classification-Pipeline",
     image: "/projects/image-classification.png",
   },
   {
@@ -85,7 +85,7 @@ export const projects: Project[] = [
     ],
     tags: ["NLP", "BERT", "Transformers", "FastAPI", "Multi-Language"],
     category: "NLP" as const,
-    github: "https://github.com/PremC1F/Multi-Language-Sentiment-Analysis-System-",
+    github: "https://github.com/premxai/Multi-Language-Sentiment-Analysis-System-",
     image: "/projects/sentiment-analyzer.png",
   },
 ];

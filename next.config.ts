@@ -15,17 +15,17 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/x",
-        destination: "https://x.com/Premxai",
+        destination: "https://x.com/premxai",
         permanent: true,
       },
       {
         source: "/twitter",
-        destination: "https://x.com/Premxai",
+        destination: "https://x.com/premxai",
         permanent: true,
       },
       {
         source: "/medium",
-        destination: "https://medium.com/@prem.b.kanaparthi",
+        destination: "https://premxai.medium.com/",
         permanent: true,
       },
       {

@@ -300,7 +300,7 @@ export function HeroMario({ scrollToSection }: HeroMarioProps) {
               transition={{ duration: 0.5, delay: 0.7 }}
             >
               <a
-                href="https://github.com/PremC1F"
+                href="https://github.com/premxai"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-700 dark:text-gray-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors duration-200"
@@ -308,7 +308,7 @@ export function HeroMario({ scrollToSection }: HeroMarioProps) {
                 <Github className="w-6 h-6" />
               </a>
               <a
-                href="https://www.linkedin.com/in/prembk03/"
+                href="https://www.linkedin.com/in/premxai/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-200"
@@ -316,7 +316,7 @@ export function HeroMario({ scrollToSection }: HeroMarioProps) {
                 <Linkedin className="w-6 h-6" />
               </a>
               <a
-                href="https://x.com/Premxai"
+                href="https://x.com/premxai"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-700 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors duration-200"
@@ -324,7 +324,7 @@ export function HeroMario({ scrollToSection }: HeroMarioProps) {
                 <Twitter className="w-6 h-6" />
               </a>
               <a
-                href="https://medium.com/@prem.b.kanaparthi"
+                href="https://premxai.medium.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-700 dark:text-gray-300 hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors duration-200"

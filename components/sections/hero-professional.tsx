@@ -67,7 +67,7 @@ export function HeroProfessional({ scrollToSection }: HeroProfessionalProps) {
 
             <div className="flex gap-5 pt-4">
               <a
-                href="https://github.com/PremC1F"
+                href="https://github.com/premxai"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
@@ -75,7 +75,7 @@ export function HeroProfessional({ scrollToSection }: HeroProfessionalProps) {
                 <Github className="w-6 h-6" />
               </a>
               <a
-                href="https://www.linkedin.com/in/prembk03/"
+                href="https://www.linkedin.com/in/premxai/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
@@ -83,7 +83,7 @@ export function HeroProfessional({ scrollToSection }: HeroProfessionalProps) {
                 <Linkedin className="w-6 h-6" />
               </a>
               <a
-                href="https://x.com/Premxai"
+                href="https://x.com/premxai"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
@@ -91,7 +91,7 @@ export function HeroProfessional({ scrollToSection }: HeroProfessionalProps) {
                 <Twitter className="w-6 h-6" />
               </a>
               <a
-                href="https://medium.com/@prem.b.kanaparthi"
+                href="https://premxai.medium.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
