@@ -124,7 +124,7 @@ Add or update your degrees and certifications.
 
 ### Publications (`data/publications.ts`)
 
-Add research papers or certifications with links.
+Add research papers or certifications with respective links.
 
 ## Customization
 
