@@ -58,5 +58,7 @@ export interface ContactInfo {
   phone: string;
   linkedin?: string;
   github?: string;
+  medium?: string;
+  twitter?: string;
   location: string;
 }

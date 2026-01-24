@@ -77,6 +77,26 @@ export function ContactProfessional() {
                       → GitHub
                     </a>
                   )}
+                  {contactInfo.medium && (
+                    <a
+                      href={contactInfo.medium}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block text-base text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+                    >
+                      → Medium
+                    </a>
+                  )}
+                  {contactInfo.twitter && (
+                    <a
+                      href={contactInfo.twitter}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block text-base text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+                    >
+                      → X (Twitter)
+                    </a>
+                  )}
                 </div>
               </div>
 

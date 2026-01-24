@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { contactInfo } from "@/data/contact";
-import { Mail, Phone, MapPin, Linkedin, Github, Send, Star } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Github, Send, Star, BookOpen, Twitter } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -102,13 +102,13 @@ export function ContactMario() {
                 </div>
             </div>
 
-            <div className="flex gap-4">
+            <div className="grid grid-cols-2 gap-4">
               {contactInfo.linkedin && (
                 <a
                   href={contactInfo.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded text-base font-bold text-white hover:scale-105 transition-transform"
+                  className="flex items-center justify-center gap-2 px-4 py-3 rounded text-sm font-bold text-white hover:scale-105 transition-transform"
                   style={{ backgroundColor: '#0A66C2', border: '3px solid #004182' }}
                 >
                   <Linkedin className="h-5 w-5" />
@@ -120,11 +120,35 @@ export function ContactMario() {
                   href={contactInfo.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded text-base font-bold text-white hover:scale-105 transition-transform"
+                  className="flex items-center justify-center gap-2 px-4 py-3 rounded text-sm font-bold text-white hover:scale-105 transition-transform"
                   style={{ backgroundColor: '#24292e', border: '3px solid #000' }}
                 >
                   <Github className="h-5 w-5" />
                   GitHub
+                </a>
+              )}
+              {contactInfo.medium && (
+                <a
+                  href={contactInfo.medium}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 px-4 py-3 rounded text-sm font-bold text-white hover:scale-105 transition-transform"
+                  style={{ backgroundColor: '#000000', border: '3px solid #333' }}
+                >
+                  <BookOpen className="h-5 w-5" />
+                  Medium
+                </a>
+              )}
+              {contactInfo.twitter && (
+                <a
+                  href={contactInfo.twitter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 px-4 py-3 rounded text-sm font-bold text-white hover:scale-105 transition-transform"
+                  style={{ backgroundColor: '#000000', border: '3px solid #333' }}
+                >
+                  <Twitter className="h-5 w-5" />
+                  X
                 </a>
               )}
             </div>
